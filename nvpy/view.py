@@ -1185,6 +1185,7 @@ class View(utils.SubjectMixin):
         # if nothing is selected, try to create new note with
         # search entry value as name
         self.notes_list.text.bind("<Return>", self.handler_search_enter)
+        self.notes_list.text.bind("<Escape>", lambda e: self.search_entry.focus())
 
         self.search_entry.bind("<Escape>", self.handler_search_escape)
         self.search_entry.bind("<Control-bracketleft>", lambda e: self.search_entry.delete(0, tk.END))
